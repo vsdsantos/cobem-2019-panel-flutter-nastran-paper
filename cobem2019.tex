@@ -1,0 +1,53 @@
+% LaTeX .tex
+% Example for the proceedings of the  25th International Congress of Mechanical Engineering
+% COBEM 2019
+% October, 20-25, 2019, Uberlândia, MG, Brazil
+% Based on the template of the proceedings of COBEM2013 and COBEM2017
+
+\documentclass[10pt,fleqn,a4paper,twoside]{article}
+\usepackage{abcm}
+\usepackage{tikz}
+\def\shortauthor{V. S. Santos and H. A. Pegado}
+\def\shorttitle{Finite Element Method Modeling of Supersonic Panel Flutter with Piston Theory}
+
+\begin{document}
+\fphead
+\hspace*{-2.5mm}\begin{tabular}{||p{\textwidth}}
+\begin{center}
+\vspace{-4mm}
+\title{COB-2019-0370\\
+Finite Element Method Modeling of Supersonic Panel Flutter with Piston Theory} %(XXXX is the manuscript number. It will be available after the extended abstract submission and must be placed for the final paper submission.)
+\end{center}
+\authors{Victor Silva dos Santos} \\
+\authors{Hélio de Assis Pegado} \\
+\institution{Universidade Federal de Minas Gerais} \\
+\institution{Escola de Engenharia - Departamento de Engenharia Mecânica}  \\
+\institution{Av. Presidente Antônio Carlos, 6627 – Pampulha – Belo Horizonte, MG, Brazil} \\
+\institution{victorsantos@ufmg.br} \\
+\institution{helio@demec.ufmg.br}
+\\
+\\
+\abstract{\textbf{Abstract.}
+The given paper describes and verifies the possibilities of a pre-processing and post-processing method to model a supersonic panel flutter problem through Finite Element Method on NASTRAN solver.
+The aerodynamic model uses a discretized third-order Piston Theory.
+The method utilizes the Python Language Framework to pre-process the model and post-process the results.
+The aeroelastic instability boundary, known as flutter, is investigated in a sample problem of a flat square plate under supersonic flow.
+}\\
+\\
+\keywords{\textbf{Keywords:} panel flutter, aeroelasticity, piston theory, nastran}\\
+\end{tabular}
+
+\input{sections/introduction.tex}
+\input{sections/procedure.tex}
+\input{sections/results.tex}
+\input{sections/conclusion.tex}
+
+\section{REFERENCES} 
+
+\bibliographystyle{abcm}
+\renewcommand{\refname}{}
+\bibliography{references}
+
+The authors are the only responsible for the printed material included in this paper.
+
+\end{document}

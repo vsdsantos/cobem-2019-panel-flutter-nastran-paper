@@ -1,0 +1,69 @@
+\section{INTRODUCTION}
+
+The \emph{panel flutter} phenomena generally refer to a dynamic aeroelastic instability on structural panels under high-speed flow.
+The flutter consists of a coupled interaction of aerodynamic,
+elastic and inertial forces on the structure, causing its vibration,
+which it's amplitude or response can become unstable under certain conditions,
+derived from aeroelastic feedback. \citep{fung_introduction_2008}
+
+Panels usually consist of plates, shells or skins of aerospace structures,
+that is usually stiffened by stringers and other elements.
+Such panels are encountered in aircraft fuselages, wings,
+rocket bodies, auxiliary fuel tanks, turbo-machines and other aircraft and spacecraft components.
+On supersonic and hypersonic applications those panels can enter in the instability region
+when the flow's dynamic pressures trespass a critical value known as the \emph{flutter boundary} or \emph{(in)stability boundary},
+leading to potential catastrophic failure or compromise of the structure lifetime.
+\citep{dowell_aeroelasticity_1974}
+
+According to \citet{pegado_metodo_2003}, the flutter analysis on panels
+are investigated since the first observation of the phenomena in the German's V-2 rockets during the Second World War.
+Ever since, the theoretical and experimental analyses evolved, so new characteristics were added to the model.
+Some relevant research includes the non-linearity of both structural and aerodynamic models, which have a dominant effect on
+\emph{post-flutter} behaviour,
+and the adoption of more efficient methods for solving the system of governing non-linear \emph{partial differential equations} (PDE).
+
+Up to the point of the 2000s, the usual aerodynamic modelling used the Piston Theory or Potential Theory,
+both linear and non-linear. The structural modelling could be both linear and non-linear,
+and utilizes some combined solutions as the \emph{Finite Element Method} (FEM), assumed shapes method,
+harmonic balance method, perturbation method, the Galerkin method, and Rayleigh-Ritz method.
+
+Since the end of Concorde's era, in the early 2000s,
+the relevance of new supersonic and hypersonic transport vehicles have again gained room.
+Today, some vehicles are in development or research, such as:
+NASA's and Lockheed's experimental supersonic jet \emph{X-59};
+the supersonic business jets \emph{Aerion AS2} and \emph{Spike S-512};
+the supersonic demonstrator \emph{XB-1};
+the supersonic transport jet \emph{Boom Technology Overture};
+and the announced Boeing's hypersonic passenger transport.
+
+In the research ambit, the phenomena have been contextualized in the modern aerospace technology. 
+\citet{hashimoto_effects_2009} have studied the the effects of flow's turbulent \emph{boundary layer}.
+\citet{alder_development_2015}, \citet{shishaeva_nonlinear_2015} and \citet{vedeneev_panel_2012} studied
+\emph{panel flutter} on low Mach number and transonic flow.
+\citet{shinde_panel_2018} has worked on the effects of \emph{shock waves} and \emph{boundary layer} interaction.
+\citet{asgari_aeroelastic_2019} has developed new methods to control the response amplitude through magneto-rheological fluids.
+\citet{cunha-filho_efficient_2018} has worked on more efficient and precise numerical models.
+\citet{yang_integrated_2014} has developed a more precise Piston Theory on curved panels.
+\citet{fazilati_panel_2018} has studied curved composite laminated plates in the presence of delamination.
+\citet{an_nonlinear_2018} analyzed the non-linear of curved composite panels at very low supersonic flow.
+\citet{yazdi_supersonic_2019}, \citet{khudayarov_nonlinear_2019} and \citet{kouchakzadeh_panel_2010} have studied the \emph{panel flutter} on more modern materials (e.g.,\ cross-ply laminated composites, viscoelastic materials, functionally graded materials).
+
+Reinforced configurations have also been studied by some authors in the last years.
+\citet{pacheco_finite_2018} has shown that the flexibility of stringers
+and other reinforcers have relevant influence in the \emph{flutter boundary} of the plate,
+as neglecting these effects being non-conservative.
+\citet{liao_flutter_1993} has shown that, in reinforced composite laminated panels, %such as \emph{carbon-fiber reinforced polymers} (CFRP),
+the properties of the composite layers and stiffeners (e.g.,\ fiber direction, skew angle) have significant effects on the
+\emph{flutter boundary}.
+
+The continuous growing of size and complexity in models urges the need for mature, quick and flexible software, as also with good usability, to reduce time costs in engineering projects.
+The NASTRAN (\emph{NAsa STRucture ANalysis}) is a FEM solver developed by NASA in the late 1960s, and continuously improved by other companies, is a standard in the current industry.
+The Femap NX NASTRAN, is a \emph{Finite Element Analysis} (FEA) software broadly used in the aerospace industry for pre-processing and post-processing problems, including non-linear, buckling, aeroelastic and thermal ones.
+However, in the case of the aeroelastic solutions, the user can only setup, through the Femap's interface, limited options of aerodynamic elements of those supported by NASTRAN, which is not the case of any supersonic theory including the Piston Theory.
+This leads to a costly time task of editing NASTRAN's bulk card entry manually, which becomes almost impossible in complex or large models.
+For this reason, it was developed a pre-processor software in the Python Language Framework, interfacing the Femap's \emph{Component Object Model} (COM) \emph{Application Programming Interface} (API), enabling a fast setup of the aerodynamic model connected to any structural model.
+
+To verify the viability of the software it was investigated the \emph{supersonic panel flutter}
+on a \emph{flat rectangular plate}.
+The aerodynamic  model uses a third-order Piston Theory, combined with a linear elastic structural theory.
+The model is analyzed in a range of velocities and Mach numbers.
